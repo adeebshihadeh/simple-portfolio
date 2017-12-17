@@ -1,4 +1,5 @@
 import json
+import re
 import mistune
 
 sitefile = json.loads(open("site.json", "r").read())
@@ -6,6 +7,12 @@ outfile = sitefile["files"]["output"]
 site_template = open(sitefile["files"]["site_template"], "r").read()
 card_template = open(sitefile["files"]["card_template"], "r").read()
 mddir = sitefile["files"]["mddir"]
+
+def fix_links(md):
+  for res in re.findall('\(([^)]+)\)', md):
+    print res
+    md = md.replace(res, mddir + res)
+  return md
 
 def build():
   content = sitefile["content"]
@@ -15,7 +22,7 @@ def build():
     data = {
       "image": mddir + content[i]["image"],
       "title": content[i]["title"],
-      "description": mistune.markdown(open(mddir + content[i]["description"], "r").read()),
+      "description": mistune.markdown(fix_links(open(mddir + content[i]["description"], "r").read())),
       "id": id
     }
     html += card_template.format(**data)
