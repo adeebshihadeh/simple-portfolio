@@ -1,4 +1,9 @@
 {
+  "files": {
+    "site_template": "site_template.html",
+    "card_template": "card_template.html",
+    "output": "index.html"
+  },
   "config": {
     "title": "simple-portfolio",
     "subtitle": "sample"

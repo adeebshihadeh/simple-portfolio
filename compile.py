@@ -2,9 +2,9 @@ import json
 import mistune
 
 sitefile = json.loads(open("site.json", "r").read())
-outfile = "index.html"
-site_template = open("site_template.html", "r").read()
-card_template = open("card_template.html", "r").read()
+outfile = sitefile["files"]["output"]
+site_template = open(sitefile["files"]["site_template"], "r").read()
+card_template = open(sitefile["files"]["card_template"], "r").read()
 
 def build():
   content = sitefile["content"]
