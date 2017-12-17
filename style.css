@@ -42,6 +42,10 @@ body {
   display: none;
 }
 
+.card a {
+  color: white;
+}
+
 .card-content {
   margin: 0;
   background-color: gray;
