@@ -6,6 +6,6 @@ function animate() {
   });
 }
 
-$(document).ready(function() {
+$(window).bind("load", function() {
   animate();
 });
