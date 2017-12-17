@@ -9,4 +9,6 @@ function animate() {
   });
 }
 
-animate();
+$(document).ready(function() {
+  animate();
+});
