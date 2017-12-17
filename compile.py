@@ -13,7 +13,7 @@ def build():
   id = 0
   for i in content:
     data = {
-      "image": content[i]["image"],
+      "image": mddir + content[i]["image"],
       "title": content[i]["title"],
       "description": mistune.markdown(open(mddir + content[i]["description"], "r").read()),
       "id": id
