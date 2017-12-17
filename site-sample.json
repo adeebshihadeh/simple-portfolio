@@ -1,0 +1,18 @@
+{
+  "config": {
+    "title": "simple-portfolio",
+    "subtitle": "sample"
+  },
+  "content": {
+    "card1": {
+      "title": "title",
+      "image": "image.jpg",
+      "description": "description"
+    },
+    "card2": {
+      "title": "title",
+      "image": "image.jpg",
+      "description": "description"
+    },
+  }
+}
