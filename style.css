@@ -3,41 +3,44 @@ body {
   margin: 0;
   text-align: center;
   background-color: black;
-}
-
-h1 {
-  color: white;
+  width: 100vw;
 }
 
 .jumbotron {
   margin: 0;
   padding: 18px 0;
   background: #454545;
+  color: white;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  width: 100%;
+  margin: 0;
 }
 
 .card {
   border-radius: 0;
   border-width: 0;
   background-color: inherit;
-  padding-bottom: 10px;
-
-  /*max-height: 15rem;
-  min-height: 100%;*/
-
   height: 15rem;
-
   max-width: 100%;
-  /*min-width: 100%;*/
   overflow: hidden;
   float: left;
   margin: 0;
-  padding: 0;
+  padding: 15px 15px;
+  overflow: hidden;
 }
 
 .card-content {
-  margin: 15px 15px;
+  margin: 0;
   background-color: gray;
   color: white;
   min-width: 100%;
   min-height: 100%;
+  overflow: hidden;
 }
