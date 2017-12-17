@@ -10,8 +10,9 @@ mddir = sitefile["files"]["mddir"]
 
 def fix_links(md):
   for res in re.findall('\(([^)]+)\)', md):
-    print res
-    md = md.replace(res, mddir + res)
+    if "http" not in res:
+      print res
+      md = md.replace(res, mddir + res)
   return md
 
 def build():
@@ -21,6 +22,7 @@ def build():
   for i in content:
     data = {
       "image": mddir + content[i]["image"],
+      "card_title": "" if content[i]["imgonly"] else content[i]["title"],
       "title": content[i]["title"],
       "description": mistune.markdown(fix_links(open(mddir + content[i]["description"], "r").read())),
       "id": id
@@ -33,8 +35,6 @@ def build():
   # write to file
   with open(outfile, "w") as f:
     f.write(html)
-
-
 
 
 if __name__ == "__main__":
