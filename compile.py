@@ -11,7 +11,6 @@ mddir = sitefile["files"]["mddir"]
 def fix_links(md):
   for res in re.findall('\(([^)]+)\)', md):
     if "http" not in res:
-      print res
       md = md.replace(res, mddir + res)
   return md
 
