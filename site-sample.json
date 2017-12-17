@@ -2,6 +2,7 @@
   "files": {
     "site_template": "site_template.html",
     "card_template": "card_template.html",
+    "mddir": "md/",
     "output": "index.html"
   },
   "config": {

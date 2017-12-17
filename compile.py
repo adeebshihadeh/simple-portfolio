@@ -5,6 +5,7 @@ sitefile = json.loads(open("site.json", "r").read())
 outfile = sitefile["files"]["output"]
 site_template = open(sitefile["files"]["site_template"], "r").read()
 card_template = open(sitefile["files"]["card_template"], "r").read()
+mddir = sitefile["files"]["mddir"]
 
 def build():
   content = sitefile["content"]
@@ -14,7 +15,7 @@ def build():
     data = {
       "image": content[i]["image"],
       "title": content[i]["title"],
-      "description": mistune.Markdown(content[i]["description"]),
+      "description": mistune.markdown(open(mddir + content[i]["description"], "r").read()),
       "id": id
     }
     html += card_template.format(**data)
